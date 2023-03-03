@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+
+
+/* globals ============================ */
+@font-face {
+    font-family: product-sans-regular;
+    src: url(https://cdn.jsdelivr.net/gh/abolphazl/box/fonts/product-sans-regular.ttf);
+}
+
+@font-face {
+    font-family: product-sans-bold;
+    src: url(https://cdn.jsdelivr.net/gh/abolphazl/box/fonts/product-sans-bold.ttf);
+}
+
+.p-regular {font-family: 'product-sans-regular'}
+.p-bold {font-family: 'product-sans-bold'}
+
+body {
+    background-image: url(https://cdn.jsdelivr.net/gh/abolphazl/box/patterns/1.svg);
+    background-size: 300px;
+    @apply bg-[#0F0F0F];
+}
+
+
+.menu-label {
+    @apply fixed right-3 bottom-3;
+    @apply shadow-lg rounded-xl p-2 cursor-pointer bg-gray-100 text-gray-600 md:hidden;
+}
+
+#sidebar {
+    --tw-translate-x: -100%;
+    @apply fixed md:sticky min-h-screen top-0 ;
+}
+#menu-close-icon {
+    display: none;
+}
+
+#menu-open:checked ~ #sidebar {
+    --tw-translate-x: 0;
+}
+#menu-open:checked ~ * #mobile-menu-button {
+    background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+#menu-open:checked ~ * #menu-open-icon {
+    display: none;
+}
+#menu-open:checked ~ * #menu-close-icon {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    #sidebar {
+        --tw-translate-x: 0;
+    }
+}
+
+.divider {
+    @apply border-t border-zinc-800;
+}
+
+
+
+.label {
+    @apply text-gray-500 p-bold
+}
+
+
+.btn {
+    @apply p-2 rounded-lg bg-blue-500 p-bold hover:bg-blue-600  text-gray-200;
+}
+
+.input {
+    @apply rounded-lg bg-[#2C2C2C]  px-3 text-gray-200 border-none;
+    @apply border-none outline-none;
+}
+
+
+.central-box {
+    @apply flex flex-col space-y-4;
+    @apply rounded-3xl bg-[#212121];
+    @apply lg:w-[640px] lg:p-16 md:w-[480px] md:p-12 sm:w-[400px] sm:p-10 w-[290px] p-3 py-8;
+}
+
+
+.aside-image {
+    @apply w-full h-24 rounded-xl;
+    background-image: url(https://cdn.jsdelivr.net/gh/abolphazl/box/images/makima.jpg);
+    @apply bg-cover bg-center
+}
+
+.genres {
+    @apply flex space-x-2 text-sm;
+}
+
+.genres span {
+    @apply px-2 text-xs p-bold rounded-full bg-[#0F0F0F] text-gray-200 cursor-pointer;
+}
+
+
+
+
+
+
+
+
+@tailwind utilities;

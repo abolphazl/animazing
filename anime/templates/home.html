@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Animazing
+{% endblock %}
+
+
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="text-green-500">You are authenticated</div>
+    {% else %}
+        <div class="text-red-400">You are not authenticated</div>
+    {% endif %}
+    {% autoescape off %} {{ telegram_login_widget }} {% endautoescape %}
+{% endblock %}
